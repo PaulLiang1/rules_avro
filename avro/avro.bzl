@@ -103,6 +103,11 @@ def _new_generator_command(ctx, src_dir, gen_dir):
      tool=ctx.file.avro_tools.path,
   )
 
+  print("########### gen command ####")
+  print(" ctx.file.avro_tools = ", ctx.file.avro_tools.path)
+  print("gen_command = ", gen_command)
+  print("########### gen command ####")
+
   if ctx.attr.strings:
     gen_command += " -string"
 
