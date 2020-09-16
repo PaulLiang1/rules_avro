@@ -147,6 +147,14 @@ def _impl(ctx):
     inputs = ctx.files.srcs + ctx.files._jdk + [
       ctx.file.avro_tools,
     ]
+    
+
+    print("########### runshell ####")
+    print("run_shell.inputs = ", inputs)
+    print("run_shell.outputs = ", ctx.outputs.codegen)
+    print("run_shell.command = ", " && ".join(commands))
+    print("########### runshell ####")
+
 
     ctx.actions.run_shell(
         inputs = inputs,
