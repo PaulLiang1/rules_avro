@@ -141,7 +141,8 @@ def _impl(ctx):
           jar="%s/bin/jar" % ctx.attr._jdk[java_common.JavaRuntimeInfo].java_home,
           output=ctx.outputs.codegen.path,
           gen_dir=gen_dir
-        )
+        ),
+        "exit 255"
     ]
 
     inputs = ctx.files.srcs + ctx.files._jdk + [
